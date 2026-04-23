@@ -1,0 +1,10 @@
+services:
+  - type: web
+    name: inkshowerlts
+    runtime: node
+    plan: free
+    buildCommand: pnpm install
+    startCommand: pnpm start
+    envVars:
+      - key: NODE_VERSION
+        value: "22"

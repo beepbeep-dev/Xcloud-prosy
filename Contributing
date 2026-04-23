@@ -1,0 +1,42 @@
+# Contributing to inkshower
+
+First off, thank you for considering contributing to inkshower! It’s people like you that make this project better for everyone.
+
+## Code of Conduct
+
+By participating in this project, you agree to be polite an use common sense. Please be respectful and professional in all interactions.
+
+## How Can I Contribute?
+
+### Reporting Bugs
+If you find a bug, please create an issue in our repository. Include:
+- A clear, descriptive title.
+- Steps to reproduce the problem.
+- What you expected to happen vs. what actually happened.
+- Any relevant logs or screenshots.
+
+### Suggesting Enhancements
+We are always open to new ideas! To suggest an enhancement:
+- Check if the idea has already been suggested in the Issues tab.
+- If not, open a new issue describing the feature and why it would be useful.
+
+### Pull Requests
+1. Fork the repository and create your branch from `main`.
+2. If you've added code that should be tested, add tests.
+3. Ensure the test suite passes.
+4. Make sure your code follows the existing style guidelines.
+5. Issue a pull request with a clear description of your changes.
+
+## Development Setup
+
+To get started with the codebase:
+
+1. Clone your fork:
+   ```bash
+   git clone https://gitlab.com/lorem-group-us/v9.git```
+2. Run VPS.sh (beta)
+``` bash
+   sudo bash ./vps.sh
+   sudo setsebool -P httpd_can_network_connect 1
+   sudo firewall-cmd --permanent --add-port=80/tcp --add-port=443/tcp
+   sudo firewall-cmd --reload```

@@ -1,0 +1,17 @@
+HEY!!!
+inkshower SUPPORTS VPS BITCH!!!
+
+Commands
+
+sudo bash ./vps.sh
+
+AWS and Selfhosting Users
+sudo apt update
+sudo apt install tor -y
+sudo systemctl enable tor
+sudo systemctl start tor
+sudo setsebool -P httpd_can_network_connect 1
+sudo firewall-cmd --permanent --add-port=80/tcp --add-port=443/tcp --add-port=9050/tcp
+sudo firewall-cmd --reload
+
+VPS is experimental. Expect issues.

@@ -1,0 +1,48 @@
+{
+	"name": "inkshowerlts",
+	"version": "9.2.1",
+	"type": "module",
+	"pnpm": {
+		"onlyBuiltDependencies": ["@mercuryworkshop/scramjet"]
+	},
+	"engines": {
+		"npm": ">=11.11.0",
+		"node": ">=24.x"
+	},
+	"scripts": {
+		"start": "node index.js",
+		"format": "pnpm biome format --write .",
+		"precommit": "pnpm run format && pnpm biome check --write .",
+		"lint": "biome lint --write ."
+	},
+	"author": "Ink Networks US",
+	"license": "GPL-3.0-or-later",
+	"dependencies": {
+		"@mercuryworkshop/bare-mux": "^2.1.8",
+		"@mercuryworkshop/bare-transport": "^1.0.0",
+		"@mercuryworkshop/bare-as-module3": "^2.2.5",
+		"@mercuryworkshop/libcurl-transport": "^2.0.5",
+		"@mercuryworkshop/scramjet": "^1.0.2",
+		"@mercuryworkshop/wisp-js": "^0.4.1",
+		"@titaniumnetwork-dev/ultraviolet": "^3.2.10",
+		"@tomphttp/bare-server-node": "^2.0.6",
+		"axios": "^1.7.9",
+		"chalk": "^5.4.1",
+		"compression": "^1.8.1",
+		"cookie-parser": "^1.4.7",
+		"cors": "^2.8.5",
+		"dotenv": "^16.4.7",
+		"express": "^5.0.1",
+		"express-basic-auth": "^1.2.1",
+		"express-rate-limit": "^7.5.0",
+		"mime": "^4.1.0",
+		"node-fetch": "^3.3.2",
+		"socks-proxy-agent": "^8.0.5",
+		"https-proxy-agent": "^7.0.0"
+	},
+	"devDependencies": {
+		"@biomejs/biome": "^2.3.8",
+		"prettier": "3.4.2"
+	},
+	"packageManager": "pnpm@10.0.0"
+}

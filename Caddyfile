@@ -1,0 +1,37 @@
+{
+        email easton@loremgroup.org
+        on_demand_tls {
+                ask http://localhost:8080/check
+        }
+}
+
+# HTTP -> HTTPS Redirect
+:80 {
+        redir https://{host}{uri}
+}
+
+# Main HTTPS Block
+:443 {
+        tls {
+                on_demand
+        }
+
+        # OPTION 1: Disable Client-to-Caddy Keep-Alive
+        # This forces the client/browser to close the connection after the response.
+        header Connection close
+
+        reverse_proxy localhost:8080 {
+                header_up Host {host}
+                header_up X-Real-IP {remote_host}
+
+                # OPTION 2: Disable Caddy-to-Backend Keep-Alive
+                # This breaks down pooled connections to your backend 
+                # into short-lived, per-request connections.
+                transport http {
+                        keepalive off
+                }
+
+                # Optional: useful if your backend handles streaming/long-polling
+                flush_interval -1
+        }
+}
